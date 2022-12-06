@@ -5,9 +5,9 @@ export default function authHeader() {
 
     if(user.token) {
         return {
-            Authorization: "Bearer " + user.token
+            'Authorization': "Bearer " + user.token
         }
     }
 
-    return null
+    return {}
 }

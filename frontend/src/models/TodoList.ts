@@ -3,3 +3,7 @@ export interface ITodoList {
     title: string
     description: string
 }
+
+export interface ITodoLists {
+    data: ITodoList[]
+}

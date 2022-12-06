@@ -46,8 +46,6 @@ class AuthService {
                 return false
             })
             .catch(error => {
-                console.log(error);
-                
                 if(error.response) {
                     return error.response
                 }

@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 
 	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/service"
 )
@@ -20,7 +20,12 @@ func NewHandler(services *service.Service) *Handler {
 func (h *Handler) InitRoutes() *gin.Engine {
 	router := gin.New()
 
-	router.Use(cors.Default())
+	corsConfig := cors.DefaultConfig()
+	corsConfig.AllowCredentials = true
+	corsConfig.AllowHeaders = []string{"authorization", "Authorization"}
+	corsConfig.AllowAllOrigins = true
+
+	router.Use(cors.New(corsConfig))
 
 	auth := router.Group("/auth")
 	{
@@ -28,7 +33,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		auth.POST("/sign-in", h.signIn)
 	}
 
-	api := router.Group("/api", h.userIdentity)
+	api := router.Group("/api", h.CORSMiddleware(), h.userIdentity)
 	{
 		lists := api.Group("/lists")
 		{
