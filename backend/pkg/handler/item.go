@@ -26,7 +26,7 @@ func (h *Handler) getAllItems(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusFound, util.NewDataResponse(items))
+	ctx.JSON(http.StatusOK, util.NewDataResponse(items))
 }
 
 func (h *Handler) getItemById(ctx *gin.Context) {
@@ -46,7 +46,7 @@ func (h *Handler) getItemById(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusFound, item)
+	ctx.JSON(http.StatusOK, item)
 }
 
 func (h *Handler) createItem(ctx *gin.Context) {

@@ -22,7 +22,7 @@ func (h *Handler) getAllLists(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusFound, util.NewDataResponse(lists))
+	ctx.JSON(http.StatusOK, util.NewDataResponse(lists))
 }
 
 func (h *Handler) getListById(ctx *gin.Context) {
@@ -43,7 +43,7 @@ func (h *Handler) getListById(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusFound, list)
+	ctx.JSON(http.StatusOK, list)
 }
 
 func (h *Handler) createList(ctx *gin.Context) {
