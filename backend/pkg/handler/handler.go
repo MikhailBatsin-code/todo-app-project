@@ -4,7 +4,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/service"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/service"
 )
 
 type Handler struct {

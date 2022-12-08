@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/domain"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/repository"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/domain"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/repository"
 )
 
 type TodoItemService struct {

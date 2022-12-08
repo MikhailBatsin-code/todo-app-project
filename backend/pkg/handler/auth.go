@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/domain"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/util"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/domain"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/util"
 )
 
 func (h *Handler) signUp(ctx *gin.Context) {

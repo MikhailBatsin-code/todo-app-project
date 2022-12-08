@@ -11,11 +11,11 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/db"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/handler"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/repository"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/server"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/service"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/db"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/handler"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/repository"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/server"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/service"
 )
 
 func main() {

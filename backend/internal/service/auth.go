@@ -8,8 +8,8 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/domain"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/repository"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/domain"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/repository"
 )
 
 // TODO: make salt generated

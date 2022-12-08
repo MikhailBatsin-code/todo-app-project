@@ -6,8 +6,8 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/db"
-	"github.com/MikhailBatsin-code/todo-proj/backend/pkg/domain"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/db"
+	"github.com/MikhailBatsin-code/todo-app-project/backend/pkg/domain"
 )
 
 type TodoListPostgres struct {
