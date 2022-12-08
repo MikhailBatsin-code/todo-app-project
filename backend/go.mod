@@ -1,4 +1,4 @@
-module github.com/MikhailBatsin-code/todo-proj/backend
+module github.com/MikhailBatsin-code/todo-app-project/backend
 
 go 1.18
 
