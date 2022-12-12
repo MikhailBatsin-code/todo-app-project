@@ -1,55 +1,44 @@
 import { AUTH_API_URL } from "../config"
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { ILoginInput, IRegisterInput, IStoredCredentials } from "../models/User"
 import { IAuthResponse, IRegisterResponse } from "../models/Response"
 
 class AuthService {
-    login(user: ILoginInput) {
-        return axios
-            .post<IAuthResponse>(AUTH_API_URL+"/sign-in", {
+    async login(user: ILoginInput) {
+        try {
+            const result = await axios.post<IAuthResponse>(AUTH_API_URL+"/sign-in", {
                 "username": user.username,
                 "password": user.password
             })
-            .then(response => {
-                if(response.data.token) {
-                    const data = {
-                        "token": response.data.token,
-                        "username": user.username
-                    }
-                    localStorage.setItem("user", JSON.stringify(data))
+            const data = {
+                "token": result.data.token,
+                "username": user.username,
+            }
+            localStorage.setItem("user", JSON.stringify(data))
+        } catch(e) {
+            return false
+        }
 
-                    return true
-                }
-            })
-            .catch(error => {
-                if(error.response) {
-                    return error.response
-                }
-            })
+        return true
     }
 
     logout() {
         localStorage.removeItem("user")
     }
 
-    register(user: IRegisterInput) {
-        return axios
-            .post<IRegisterResponse>(AUTH_API_URL+"/sign-up", {
-                "name": user.name,
-                "username": user.username,
-                "password": user.password
-            })
-            .then(response => {
-                if(response.data.id) {
-                    return true
-                }
-                return false
-            })
-            .catch(error => {
-                if(error.response) {
-                    return error.response
-                }
-            })
+    async register(user: IRegisterInput) {
+        try {
+            await axios
+                .post<IRegisterResponse>(AUTH_API_URL+"/sign-up", {
+                    "name": user.name,
+                    "username": user.username,
+                    "password": user.password
+                })
+        } catch(e) {
+            return false
+        }
+
+        return true
     }
 
     getCurrentUser(): IStoredCredentials {

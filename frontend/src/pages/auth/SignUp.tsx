@@ -26,21 +26,10 @@ export default function SignUp() {
     message: ""
   })
 
-  function onUsernameInputChange(event: ChangeEvent) {
-    setUsername(event.target.value)
-  }
-
-  function onNameInputChange(event: ChangeEvent) {
-    setName(event.target.value)
-  }
-
-  function onPasswordInputChange(event: ChangeEvent) {
-    setPassword(event.target.value)
-  }
-
-  function onPasswordConfirmInputChange(event: ChangeEvent) {
-    setPasswordConfirm(event.target.value)
-  }
+  const onUsernameInputChange =        (event: ChangeEvent) => setUsername(event.target.value)
+  const onNameInputChange =            (event: ChangeEvent) => setName(event.target.value)
+  const onPasswordInputChange =        (event: ChangeEvent) => setPassword(event.target.value)
+  const onPasswordConfirmInputChange = (event: ChangeEvent) => setPasswordConfirm(event.target.value)
 
   function validate() {
     const toValidate: IValidatable[] = [
@@ -64,7 +53,7 @@ export default function SignUp() {
       return
     }
     const result = await AuthService.register({name, username, password})
-    if(!(typeof result == typeof true)) {
+    if(!result) {
       setStatus({
         isError: true,
         message: "аккаунт не может быть создан"
@@ -83,7 +72,7 @@ export default function SignUp() {
         <FormInput
           id="name" 
           type="text" 
-          placeholder="Имя"
+          placeholder="Ваше имя"
           name="name"
           value={name}
           onChange={onNameInputChange}

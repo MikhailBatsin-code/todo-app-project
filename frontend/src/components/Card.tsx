@@ -4,10 +4,10 @@ interface CardProps {
 
 export default function Card({children}: CardProps) {
     return (
-        <div 
-            className="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-2xl dark:border-gray-700 dark:bg-gray-800"
-        >
-            {children}
+        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="flex flex-col items-center pt-10 pb-10">
+                { children }
+            </div>
         </div>
     )
 }

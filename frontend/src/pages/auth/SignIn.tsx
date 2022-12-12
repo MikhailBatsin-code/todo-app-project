@@ -36,7 +36,7 @@ export default function SignIn() {
       return
     }
     const result = await AuthService.login({username, password})
-    if(!(typeof result == typeof true)) {
+    if(!result) {
       setStatus({
         isError: true,
         message: "аккаунт не найден"

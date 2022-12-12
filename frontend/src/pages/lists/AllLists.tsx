@@ -1,6 +1,8 @@
 import { AxiosError } from "axios"
 import { useEffect, useState } from "react"
-import { ITodoList, ITodoLists } from "../../models/TodoList"
+import Button from "../../components/Button"
+import Lists from "../../components/Lists"
+import { ITodoList } from "../../models/TodoList"
 import TodoListService from "../../services/TodoListService"
 
 export default function AllLists() {
@@ -17,9 +19,7 @@ export default function AllLists() {
         } catch(e) {
             const error = e as AxiosError
             setLoading(false)
-            if(error.response?.status !== 302) {
-                setError(error.message)
-            }
+            setError(error.message)
         }
     }
 
@@ -45,7 +45,15 @@ export default function AllLists() {
                 error &&
                 <p className="text-center text-lg text-red-600 italic"></p>
             }
-            
+
+            <div className="border-b-2 border-black flex flex-row justify-between">
+                <p className="text-left">Количество списков: <span>{ lists ? lists.length : 0 }</span></p>
+                <a href="/lists/create"><Button className="mb-[0.5px] py-2 px-4" text="+" /></a>
+            </div>
+
+            <div className="mt-1">
+                { lists ? <Lists lists={lists}/> : <p>У вас еще нету списков дел.</p> }
+            </div>
         </div>
     )
 }

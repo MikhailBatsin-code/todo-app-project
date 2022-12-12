@@ -8,6 +8,7 @@ import SignIn from './pages/auth/SignIn';
 import SignUp from './pages/auth/SignUp';
 import Home from './pages/Home';
 import AllLists from './pages/lists/AllLists';
+import { CreateList } from './pages/lists/CreateList';
 
 function App() {
   return (
@@ -26,6 +27,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <AllLists/>
+              </ProtectedRoute>
+            }
+          />
+          <Route 
+            path='/lists/create' 
+            element={
+              <ProtectedRoute>
+                <CreateList />
               </ProtectedRoute>
             }
           />
