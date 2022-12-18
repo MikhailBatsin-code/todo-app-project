@@ -16,6 +16,7 @@ class AuthService {
             }
             localStorage.setItem("user", JSON.stringify(data))
         } catch(e) {
+            console.log(e);
             return false
         }
 
@@ -35,6 +36,7 @@ class AuthService {
                     "password": user.password
                 })
         } catch(e) {
+            console.log(e);
             return false
         }
 

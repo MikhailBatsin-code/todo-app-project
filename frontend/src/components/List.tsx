@@ -23,7 +23,11 @@ export default function List({ list }: ListProps) {
                 <CardLink
                     href={ "/lists/delete/" + list.id }
                     className="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
-                >Удалить</CardLink>
+                >&#128465;</CardLink>
+                <CardLink
+                    href={ "/lists/update/" + list.id }
+                    className="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+                >&#9998;</CardLink>
             </CardLinks>
         </Card>
     )

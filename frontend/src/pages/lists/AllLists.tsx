@@ -40,7 +40,7 @@ export default function AllLists() {
     }
 
     return (
-        <div>
+        <div className="shadow border p-2">
             {
                 error &&
                 <p className="text-center text-lg text-red-600 italic"></p>
