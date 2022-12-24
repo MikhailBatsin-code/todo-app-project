@@ -4,3 +4,7 @@ export interface ITodoItem {
     description: string
     done: boolean
 }
+
+export interface ITodoItems {
+    data: ITodoItem[]
+}

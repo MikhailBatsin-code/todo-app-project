@@ -5,6 +5,7 @@ import FormInput from "../../components/FormInput";
 import TodoListService from "../../services/TodoListService";
 import { ChangeEvent, IStatus } from "../../utils/types";
 import validate from "../../utils/validate";
+import { Result } from "../../utils/result";
 
 export function CreateList() {
     const [title, setTitle] = useState("")
@@ -37,7 +38,7 @@ export function CreateList() {
             return
         }
         const result = await TodoListService.create({ title, description })
-        if(!result) {
+        if(result === Result.BAD) {
             setStatus({
                 isError: true,
                 message: "Не получилось создать новый список"

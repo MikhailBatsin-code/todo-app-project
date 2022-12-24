@@ -1,5 +1,5 @@
 import { AUTH_API_URL } from "../config"
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 import { ILoginInput, IRegisterInput, IStoredCredentials } from "../models/User"
 import { IAuthResponse, IRegisterResponse } from "../models/Response"
 

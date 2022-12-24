@@ -120,5 +120,5 @@ func (h *Handler) deleteItem(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusFound, util.NewResponse("ok"))
+	ctx.JSON(http.StatusOK, util.NewResponse("ok"))
 }

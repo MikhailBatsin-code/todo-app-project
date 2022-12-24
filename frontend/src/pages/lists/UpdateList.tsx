@@ -5,6 +5,7 @@ import { ChangeEvent, IStatus } from "../../utils/types";
 import FormInput from "../../components/FormInput";
 import Button from "../../components/Button";
 import TodoListService from "../../services/TodoListService";
+import { Result } from "../../utils/result";
 
 export function UpdateList() {
     const { id } = useParams()
@@ -33,7 +34,7 @@ export function UpdateList() {
             title,
             description
         })
-        if(!result) {
+        if(result === Result.BAD) {
             setStatus({
                 isError: true,
                 message: "не получилось отредактировать список"
