@@ -6,6 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
@@ -27,6 +28,10 @@ func main() {
 
 	if err := godotenv.Load(); err != nil {
 		logrus.Fatalf("error while reading .env files: %s\n", err.Error())
+	}
+
+	if viper.GetString("release") == "true" {
+		gin.SetMode(gin.ReleaseMode)
 	}
 
 	db, err := db.NewPostgresDB(db.Config{
